@@ -16,7 +16,6 @@ import { Session } from "@/session/session"
 import { NamedError } from "@individualagent/core/util/error"
 import { CopilotAuthPlugin } from "./github-copilot/copilot"
 import { gitlabAuthPlugin as GitlabAuthPlugin } from "opencode-gitlab-auth"
-import { PoeAuthPlugin } from "opencode-poe-auth"
 import { CloudflareAIGatewayAuthPlugin, CloudflareWorkersAuthPlugin } from "./cloudflare"
 import { AzureAuthPlugin } from "./azure"
 import { Effect, Layer, Context, Stream } from "effect"
@@ -55,12 +54,10 @@ export interface Interface {
 
 export class Service extends Context.Service<Service, Interface>()("@opencode/Plugin") {}
 
-// Built-in plugins that are directly imported (not installed from npm)
 const INTERNAL_PLUGINS: PluginInstance[] = [
   CodexAuthPlugin,
   CopilotAuthPlugin,
   GitlabAuthPlugin,
-  PoeAuthPlugin,
   CloudflareWorkersAuthPlugin,
   CloudflareAIGatewayAuthPlugin,
   AzureAuthPlugin,
