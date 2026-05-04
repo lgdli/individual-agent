@@ -1,6 +1,6 @@
 {
   "name": "@individualagent/console-function",
-  "version": "1.14.33",
+  "version": "0.01",
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
   "type": "module",

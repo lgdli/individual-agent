@@ -1,6 +1,6 @@
 {
   "name": "@individualagent/slack",
-  "version": "1.14.33",
+  "version": "0.01",
   "type": "module",
   "license": "MIT",
   "scripts": {
