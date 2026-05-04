@@ -345,7 +345,7 @@
     "packages/individualagent": {
       "name": "opencode",
       "bin": {
-        "opencode": "./bin/opencode",
+        "individualagent": "./bin/individualagent",
       },
       "dependencies": {
         "@actions/core": "1.11.1",

@@ -82,7 +82,7 @@ if (!Script.preview) {
     "# Maintainer: dax",
     "# Maintainer: adam",
     "",
-    "pkgname='opencode-bin'",
+    "pkgname='individualagent-bin'",
     `pkgver=${pkgver}`,
     `_subver=${_subver}`,
     "options=('!debug' '!strip')",
@@ -91,8 +91,8 @@ if (!Script.preview) {
     "url='https://github.com/anomalyco/opencode'",
     "arch=('aarch64' 'x86_64')",
     "license=('MIT')",
-    "provides=('opencode')",
-    "conflicts=('opencode')",
+    "provides=('individualagent')",
+    "conflicts=('individualagent')",
     "depends=('ripgrep')",
     "",
     `source_aarch64=("\${pkgname}_\${pkgver}_aarch64.tar.gz::https://github.com/anomalyco/opencode/releases/download/v\${pkgver}\${_subver}/opencode-linux-arm64.tar.gz")`,
@@ -102,12 +102,12 @@ if (!Script.preview) {
     `sha256sums_x86_64=('${x64Sha}')`,
     "",
     "package() {",
-    '  install -Dm755 ./opencode "${pkgdir}/usr/bin/opencode"',
+    '  install -Dm755 ./individualagent "${pkgdir}/usr/bin/individualagent"',
     "}",
     "",
   ].join("\n")
 
-  for (const [pkg, pkgbuild] of [["opencode-bin", binaryPkgbuild]]) {
+  for (const [pkg, pkgbuild] of [["individualagent-bin", binaryPkgbuild]]) {
     for (let i = 0; i < 30; i++) {
       try {
         await $`rm -rf ./dist/aur-${pkg}`
