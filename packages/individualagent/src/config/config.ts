@@ -516,7 +516,7 @@ export const layer = Layer.effect(
         }
 
         if (!Flag.OPENCODE_DISABLE_PROJECT_CONFIG) {
-          for (const file of yield* ConfigPaths.files("opencode", ctx.directory, ctx.worktree).pipe(Effect.orDie)) {
+          for (const file of yield* ConfigPaths.files("individualagent", ctx.directory, ctx.worktree).pipe(Effect.orDie)) {
             yield* merge(file, yield* loadFile(file), "local")
           }
         }
@@ -534,7 +534,7 @@ export const layer = Layer.effect(
         const deps: Fiber.Fiber<void, never>[] = []
 
         for (const dir of directories) {
-          if (dir.endsWith(".opencode") || dir === Flag.OPENCODE_CONFIG_DIR) {
+          if (dir.endsWith(".individualAgent") || dir.endsWith(".opencode") || dir === Flag.OPENCODE_CONFIG_DIR) {
             for (const file of ["individualagent.json", "individualagent.jsonc"]) {
               const source = path.join(dir, file)
               log.debug(`loading config from ${source}`)
